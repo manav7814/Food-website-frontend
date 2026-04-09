@@ -1,0 +1,272 @@
+/* UserCard.css - Professional User Card Component Styles */
+
+/* CSS Variables for theming */
+:root {
+  --uc-bg-color: #ffffff;
+  --uc-border-color: #e4dfd4;
+  --uc-text-primary: #222126;
+  --uc-text-secondary: #6b6670;
+  --uc-accent-color: #d94818;
+  --uc-accent-hover: #b03a12;
+  --uc-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --uc-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --uc-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --uc-transition-fast: 0.15s ease;
+  --uc-transition-normal: 0.25s ease;
+  --uc-border-radius: 12px;
+  --uc-border-radius-lg: 16px;
+}
+
+/* Main Card Container */
+.user-card {
+  background: var(--uc-bg-color);
+  border: 1px solid var(--uc-border-color);
+  border-radius: var(--uc-border-radius-lg);
+  padding: 24px;
+  box-shadow: var(--uc-shadow-sm);
+  transition: all var(--uc-transition-normal);
+  max-width: 360px;
+  width: 100%;
+}
+
+.user-card:hover {
+  box-shadow: var(--uc-shadow-md);
+  transform: translateY(-2px);
+  border-color: rgba(217, 72, 24, 0.3);
+}
+
+/* Card Header */
+.user-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--uc-border-color);
+}
+
+/* Avatar */
+.user-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--uc-accent-color) 0%, #ff9b58 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(217, 72, 24, 0.3);
+}
+
+/* Title Section */
+.user-card-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--uc-text-primary);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-label {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--uc-text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Card Body */
+.user-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Info Row */
+.user-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.user-info-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  color: var(--uc-accent-color);
+}
+
+/* Email & Phone Links */
+.user-info-link {
+  flex: 1;
+  color: var(--uc-text-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color var(--uc-transition-fast);
+}
+
+.user-info-link:hover {
+  color: var(--uc-accent-color);
+}
+
+/* Address Container */
+.user-address-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-address {
+  margin: 0;
+  font-size: 14px;
+  color: var(--uc-text-secondary);
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.user-address.collapsed {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.user-address.expanded {
+  display: block;
+}
+
+/* Show More/Less Button */
+.user-address-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--uc-accent-color);
+  cursor: pointer;
+  transition: color var(--uc-transition-fast);
+  font-family: inherit;
+}
+
+.user-address-toggle:hover {
+  color: var(--uc-accent-hover);
+  text-decoration: underline;
+}
+
+.user-address-toggle:focus {
+  outline: 2px solid rgba(217, 72, 24, 0.3);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Card Footer */
+.user-card-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--uc-border-color);
+}
+
+.user-card-action {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--uc-accent-color) 0%, #ff8f55 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--uc-border-radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--uc-transition-fast);
+  font-family: inherit;
+}
+
+.user-card-action:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 4px 12px rgba(217, 72, 24, 0.4);
+}
+
+.user-card-action:active {
+  transform: scale(0.98);
+}
+
+.user-card-action:focus {
+  outline: 2px solid rgba(217, 72, 24, 0.4);
+  outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .user-card {
+    padding: 20px;
+    border-radius: var(--uc-border-radius);
+  }
+
+  .user-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .user-name {
+    font-size: 16px;
+  }
+
+  .user-card-body {
+    gap: 12px;
+  }
+
+  .user-info-row {
+    gap: 10px;
+  }
+
+  .user-info-link,
+  .user-address {
+    font-size: 13px;
+  }
+
+  .user-address-toggle {
+    font-size: 12px;
+  }
+
+  .user-card-action {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Dark Mode Support (optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --uc-bg-color: #1e1e24;
+    --uc-border-color: #3a3a44;
+    --uc-text-primary: #f0f0f0;
+    --uc-text-secondary: #a0a0a8;
+  }
+
+  .user-card:hover {
+    border-color: rgba(217, 72, 24, 0.5);
+  }
+}
